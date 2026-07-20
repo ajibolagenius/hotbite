@@ -11,7 +11,7 @@ import grain from "@/assets/textures/grain.png";
 import { heroSlides } from "./hero-slides";
 
 const arrowButtonClass =
-  "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cream text-dark-yellow transition hover:bg-white sm:h-12 sm:w-12 sm:rounded-2xl";
+  "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cream text-dark-yellow transition hover:bg-white sm:h-14 sm:w-14 sm:rounded-2xl lg:h-16 lg:w-16";
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -48,7 +48,7 @@ export function Hero() {
           type="button"
           onClick={goToPrev}
           aria-label="Previous flavor"
-          className={`absolute left-4 top-1/2 z-20 hidden -translate-y-1/2 md:flex lg:left-6 ${arrowButtonClass}`}
+          className={`absolute left-2 top-1/2 z-20 hidden -translate-y-1/2 md:flex lg:left-4 xl:left-10 ${arrowButtonClass}`}
         >
           <ChevronLeft size={22} strokeWidth={2.5} />
         </button>
@@ -56,35 +56,35 @@ export function Hero() {
           type="button"
           onClick={goToNext}
           aria-label="Next flavor"
-          className={`absolute right-4 top-1/2 z-20 hidden -translate-y-1/2 md:flex lg:right-6 ${arrowButtonClass}`}
+          className={`absolute right-2 top-1/2 z-20 hidden -translate-y-1/2 md:flex lg:right-4 xl:right-10 ${arrowButtonClass}`}
         >
           <ChevronRight size={22} strokeWidth={2.5} />
         </button>
 
-        <div className="flex flex-1 flex-col items-center justify-center pb-8 pt-2 md:pb-10 md:pt-0">
+        <div className="flex flex-1 flex-col items-center justify-center pb-8 pt-2 md:pb-6 md:pt-0">
           {/* Desktop / tablet stage: height locks image inside the type block */}
-          <div className="relative mx-auto hidden h-[440px] w-full max-w-[1280px] md:block lg:h-[500px] xl:h-[540px]">
+          <div className="relative mx-auto hidden h-[410px] w-full max-w-[1280px] md:block lg:h-[440px] xl:h-[470px]">
             <div className="absolute inset-x-0 top-0 z-0 flex h-full flex-col items-center justify-center text-center leading-[0.72]">
-              <div className="origin-center scale-x-[1.7]">
+              <div className="origin-center scale-x-[0.86]">
                 <h1
-                  className={`font-heading text-[100px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 lg:text-[140px] xl:text-[160px] ${slide.accentTextClass}`}
+                  className={`font-heading text-[172px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 lg:text-[236px] xl:text-[272px] ${slide.accentTextClass}`}
                 >
                   Wrapped
                 </h1>
                 <h1
-                  className={`font-heading text-[100px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 lg:text-[140px] xl:text-[160px] ${slide.accentTextClass}`}
+                  className={`font-heading text-[172px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 lg:text-[236px] xl:text-[272px] ${slide.accentTextClass}`}
                 >
                   In Flavor
                 </h1>
               </div>
             </div>
 
-            <div className="pointer-events-none absolute left-1/2 top-[48%] z-10 w-[320px] -translate-x-1/2 -translate-y-1/2 lg:w-[360px] xl:w-[390px]">
+            <div className="pointer-events-none absolute left-1/2 top-[50%] z-10 w-[320px] -translate-x-1/2 -translate-y-1/2 lg:w-[430px] xl:w-[510px]">
               <Image
                 src={slide.image}
                 alt={slide.imageAlt}
                 className="h-auto w-full drop-shadow-2xl"
-                sizes="(max-width: 1024px) 34vw, 400px"
+                sizes="(max-width: 1024px) 34vw, 470px"
                 priority={activeIndex === 0}
               />
             </div>
@@ -93,19 +93,19 @@ export function Hero() {
               label={slide.tags[0]}
               textClass={slide.accentTextClass}
               bgClass={slide.bgClass}
-              className="left-[22%] top-[8%] -rotate-12"
+              className="left-[35%] top-[22%] -rotate-12"
             />
             <FlavorTag
               label={slide.tags[1]}
               textClass={slide.accentTextClass}
               bgClass={slide.bgClass}
-              className="left-[12%] top-[26%] -rotate-[8deg]"
+              className="left-[27%] top-[30%] -rotate-[8deg]"
             />
             <FlavorTag
               label={slide.tags[2]}
               textClass={slide.accentTextClass}
               bgClass={slide.bgClass}
-              className="left-[18%] top-[44%] -rotate-6"
+              className="left-[30%] top-[40%] -rotate-6"
             />
 
             <EmojiBubble
@@ -113,53 +113,55 @@ export function Hero() {
               size={28}
               bgClass={slide.bgClass}
               ringClass={slide.ringClass}
-              className="right-[16%] top-[58%] h-11 w-11"
+              className="right-[27%] top-[65%] h-11 w-11"
             />
             <EmojiBubble
               name={slide.emojis[1]}
               size={38}
               bgClass={slide.bgClass}
               ringClass={slide.ringClass}
-              className="right-[22%] top-[76%] h-16 w-16"
+              className="right-[31%] top-[74%] h-16 w-16"
             />
           </div>
 
           {/* Mobile: image stacked above the headline */}
           <div className="flex w-full flex-col items-center md:hidden">
-            <div className="relative w-[min(78vw,280px)]">
+            <div className="relative w-[min(66vw,235px)]">
               <Image
                 src={slide.image}
                 alt={slide.imageAlt}
                 className="h-auto w-full drop-shadow-2xl"
-                sizes="280px"
+                sizes="235px"
                 priority
               />
             </div>
 
-            <div className="relative mt-1 w-full text-center leading-[0.78]">
-              <h1
-                className={`font-heading text-[clamp(3.5rem,17vw,4.75rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${slide.accentTextClass}`}
-              >
-                Wrapped
-              </h1>
-              <h1
-                className={`font-heading text-[clamp(3.5rem,17vw,4.75rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${slide.accentTextClass}`}
-              >
-                In Flavor
-              </h1>
+            <div className="relative mt-1 w-full text-center leading-[0.72]">
+              <div className="origin-center scale-x-[0.73]">
+                <h1
+                  className={`font-heading text-[clamp(4.5rem,25vw,6rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${slide.accentTextClass}`}
+                >
+                  Wrapped
+                </h1>
+                <h1
+                  className={`font-heading text-[clamp(4.5rem,25vw,6rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${slide.accentTextClass}`}
+                >
+                  In Flavor
+                </h1>
+              </div>
 
               <FlavorTag
                 label={slide.tags[1]}
                 textClass={slide.accentTextClass}
                 bgClass={slide.bgClass}
-                className="left-[6%] top-[8%] scale-90 -rotate-12"
+                className="left-[8%] top-[38%] scale-75 -rotate-12"
               />
               <EmojiBubble
                 name={slide.emojis[0]}
-                size={24}
+                size={22}
                 bgClass={slide.bgClass}
                 ringClass={slide.ringClass}
-                className="right-[8%] top-[55%] h-9 w-9"
+                className="right-[10%] top-[28%] h-9 w-9"
               />
             </div>
           </div>

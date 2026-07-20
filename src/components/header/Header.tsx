@@ -47,15 +47,16 @@ export function Header({
           ))}
         </nav>
 
-        <ButtonLink
-          href="#contact"
-          variant="accent"
-          accentBgClass={contactBgClass}
-          accentTextClass={contactTextClass}
-          className="hidden md:inline-flex"
-        >
-          Contact Us
-        </ButtonLink>
+        <div className="hidden md:block">
+          <ButtonLink
+            href="#contact"
+            variant="accent"
+            accentBgClass={contactBgClass}
+            accentTextClass={contactTextClass}
+          >
+            Contact Us
+          </ButtonLink>
+        </div>
 
         <button
           type="button"
