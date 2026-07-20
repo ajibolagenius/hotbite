@@ -19,6 +19,10 @@
 ### Icons Library
 - Main: [Lucide](https://lucide.dev/)
 
+### Animation/Motion
+- Framer Motion - https://motion.dev/
+- React Spring - https://www.react-spring.dev/
+
 ---
 
 ## Summary
