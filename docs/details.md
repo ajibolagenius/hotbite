@@ -16,6 +16,9 @@
 - Purple: #EE33FF
 - Dark Purple: #3A0040
 
+### Icons Library
+- Main: [Lucide](https://lucide.dev/)
+
 ---
 
 ## Summary
