@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --hotbite-white: #ffffff;
+  --hotbite-cream: #ffefd9;
+  --hotbite-yellow: #ff9500;
+  --hotbite-dark-yellow: #401500;
+  --hotbite-green: #33cc66;
+  --hotbite-dark-green: #004015;
+  --hotbite-purple: #ee33ff;
+  --hotbite-dark-purple: #3a0040;
+
+  --background: var(--hotbite-cream);
+  --foreground: var(--hotbite-dark-yellow);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-white: var(--hotbite-white);
+  --color-cream: var(--hotbite-cream);
+  --color-yellow: var(--hotbite-yellow);
+  --color-dark-yellow: var(--hotbite-dark-yellow);
+  --color-green: var(--hotbite-green);
+  --color-dark-green: var(--hotbite-dark-green);
+  --color-purple: var(--hotbite-purple);
+  --color-dark-purple: var(--hotbite-dark-purple);
+
+  --font-heading: var(--font-londrina);
+  --font-body: var(--font-andika);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
