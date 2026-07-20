@@ -13,6 +13,8 @@ export interface HeroSlide {
   accentTextClass: string;
   accentBgClass: string;
   accentDarkTextClass: string;
+  edgeTextClass: string;
+  ringClass: string;
   tags: [string, string, string];
   emojis: [EmojiName, EmojiName];
 }
@@ -27,6 +29,8 @@ export const heroSlides: HeroSlide[] = [
     accentTextClass: "text-yellow",
     accentBgClass: "bg-yellow",
     accentDarkTextClass: "text-dark-yellow",
+    edgeTextClass: "text-dark-yellow",
+    ringClass: "ring-yellow",
     tags: ["Stretchy", "Cheesy", "Crispy"],
     emojis: ["drooling-face", "fire"],
   },
@@ -39,7 +43,9 @@ export const heroSlides: HeroSlide[] = [
     accentTextClass: "text-green",
     accentBgClass: "bg-green",
     accentDarkTextClass: "text-dark-green",
-    tags: ["Beefy", "Juicy", "Saucy"],
+    edgeTextClass: "text-dark-green",
+    ringClass: "ring-green",
+    tags: ["Juicy", "Beefy", "Saucy"],
     emojis: ["french-fries", "pinched-fingers"],
   },
   {
@@ -51,7 +57,9 @@ export const heroSlides: HeroSlide[] = [
     accentTextClass: "text-purple",
     accentBgClass: "bg-purple",
     accentDarkTextClass: "text-dark-purple",
-    tags: ["Spicy", "Loaded", "Snappy"],
+    edgeTextClass: "text-dark-purple",
+    ringClass: "ring-purple",
+    tags: ["Loaded", "Spicy", "Snappy"],
     emojis: ["raising-hands", "red-heart"],
   },
 ];

@@ -16,31 +16,44 @@ const navLinks = [
 interface HeaderProps {
   infoBarBgClass: string;
   infoBarTextClass: string;
+  contactBgClass: string;
+  contactTextClass: string;
 }
 
-export function Header({ infoBarBgClass, infoBarTextClass }: HeaderProps) {
+export function Header({
+  infoBarBgClass,
+  infoBarTextClass,
+  contactBgClass,
+  contactTextClass,
+}: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-30 w-full">
+    <header className="relative z-30 w-full shrink-0">
       <InfoBar bgClass={infoBarBgClass} textClass={infoBarTextClass} />
 
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-6 py-5 sm:px-10">
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-6 py-4 sm:px-10 sm:py-5">
         <Logo />
 
-        <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 md:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-0.5 rounded-full bg-white/10 px-1.5 py-1.5 md:flex lg:gap-1 lg:px-2">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 font-body text-sm font-bold text-cream transition hover:bg-white/10"
+              className="rounded-full px-3 py-2 font-body text-sm font-bold text-cream transition hover:bg-white/10 lg:px-4"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <ButtonLink href="#contact" variant="cream" className="hidden md:inline-flex">
+        <ButtonLink
+          href="#contact"
+          variant="accent"
+          accentBgClass={contactBgClass}
+          accentTextClass={contactTextClass}
+          className="hidden md:inline-flex"
+        >
           Contact Us
         </ButtonLink>
 
@@ -49,7 +62,7 @@ export function Header({ infoBarBgClass, infoBarTextClass }: HeaderProps) {
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-cream transition hover:bg-white/20 md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-cream/30 bg-transparent text-cream transition hover:bg-white/10 md:hidden"
         >
           {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -72,8 +85,8 @@ export function Header({ infoBarBgClass, infoBarTextClass }: HeaderProps) {
           <ButtonLink
             href="#contact"
             variant="accent"
-            accentBgClass="bg-yellow"
-            accentTextClass="text-dark-yellow"
+            accentBgClass={contactBgClass}
+            accentTextClass={contactTextClass}
             onClick={() => setIsMenuOpen(false)}
             className="mt-2 w-full"
           >
