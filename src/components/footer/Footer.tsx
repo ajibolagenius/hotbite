@@ -75,6 +75,12 @@ export function Footer() {
             Privacy Policy
           </a>
           <a
+            href="/404"
+            className="font-body text-sm text-cream/50 transition hover:text-cream sm:text-base"
+          >
+            404
+          </a>
+          <a
             href="/licenses"
             className="font-body text-sm text-cream/50 transition hover:text-cream sm:text-base"
           >
