@@ -49,7 +49,7 @@ export function Values() {
         </p>
 
         <div className="mt-14 grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_auto_1fr] lg:gap-10">
-          <div className="order-2 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:order-1 lg:grid-cols-1 lg:gap-16">
+          <div className="order-1 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-1 lg:gap-16">
             {leftValues.map((value) => (
               <ValueBlock key={value.title} {...value} />
             ))}
@@ -58,11 +58,11 @@ export function Values() {
           <TornPhoto
             src={valuePhoto}
             alt="A woman enjoying a slice of pizza outside a street food truck"
-            className="relative order-1 mx-auto h-[420px] w-[315px] sm:h-[500px] sm:w-[375px] lg:order-2"
-            sizes="(max-width: 640px) 315px, 375px"
+            className="relative order-3 mx-auto h-[420px] w-[315px] sm:h-[500px] sm:w-[375px] md:h-[560px] md:w-[700px] lg:order-2 lg:h-[420px] lg:w-[315px]"
+            sizes="(max-width: 640px) 315px, (max-width: 1024px) 700px, 375px"
           />
 
-          <div className="order-3 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-1 lg:gap-16">
+          <div className="order-2 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:order-3 lg:grid-cols-1 lg:gap-16">
             {rightValues.map((value) => (
               <ValueBlock key={value.title} {...value} />
             ))}

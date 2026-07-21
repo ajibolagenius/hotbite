@@ -63,7 +63,7 @@ export function Hero() {
 
         <div className="flex flex-1 flex-col items-center justify-center pb-8 pt-2 md:pb-6 md:pt-0">
           {/* Desktop / tablet stage: height locks image inside the type block */}
-          <div className="relative mx-auto hidden h-[410px] w-full max-w-[1280px] md:block lg:h-[440px] xl:h-[470px]">
+          <div className="relative mx-auto hidden h-[410px] w-full max-w-[1280px] md:block lg:h-[500px] xl:h-[560px]">
             <div className="absolute inset-x-0 top-0 z-0 flex h-full flex-col items-center justify-center text-center leading-[0.72]">
               <div className="origin-center scale-x-[0.86]">
                 <h1
@@ -79,12 +79,12 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="pointer-events-none absolute left-1/2 top-[50%] z-10 w-[320px] -translate-x-1/2 -translate-y-1/2 lg:w-[430px] xl:w-[510px]">
+            <div className="pointer-events-none absolute left-1/2 top-[50%] z-10 w-[320px] -translate-x-1/2 -translate-y-1/2 lg:w-[560px] xl:w-[680px]">
               <Image
                 src={slide.image}
                 alt={slide.imageAlt}
                 className="h-auto w-full drop-shadow-2xl"
-                sizes="(max-width: 1024px) 34vw, 470px"
+                sizes="(max-width: 1024px) 34vw, 680px"
                 priority={activeIndex === 0}
               />
             </div>

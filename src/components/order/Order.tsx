@@ -96,30 +96,49 @@ export function Order() {
 
 function OrderCollage() {
   return (
-    <div className="relative mt-12 h-[300px] w-full max-w-lg sm:mt-14 sm:h-[360px] lg:h-[400px]">
-      {/* Friends sharing a meal — mid-left, behind */}
-      <TornPhoto
-        src={order1}
-        alt="Friends sharing pizza and snacks together"
-        className="absolute left-0 top-[18%] z-10 h-[58%] w-[52%] -rotate-[6deg] sm:w-[48%]"
-        sizes="(max-width: 640px) 52vw, 280px"
-      />
+    <>
+      {/* Mobile: simplified 2-photo stack */}
+      <div className="mt-12 flex w-full max-w-lg flex-col gap-4 sm:hidden">
+        <TornPhoto
+          src={order1}
+          alt="Friends sharing pizza and snacks together"
+          className="relative h-[220px] w-full -rotate-2"
+          sizes="90vw"
+        />
+        <TornPhoto
+          src={order2}
+          alt="A woman enjoying a wrap in front of a graffiti wall"
+          className="relative h-[220px] w-full rotate-2"
+          sizes="90vw"
+        />
+      </div>
 
-      {/* Pizza slice — smaller, top center/right */}
-      <TornPhoto
-        src={order3}
-        alt="Hands holding a loaded slice of pizza"
-        className="absolute left-[38%] top-0 z-20 h-[42%] w-[38%] rotate-[7deg] sm:left-[42%] sm:w-[36%]"
-        sizes="(max-width: 640px) 38vw, 200px"
-      />
+      {/* Tablet/desktop: overlapping cluster */}
+      <div className="relative mt-14 hidden h-[360px] w-full max-w-lg sm:block lg:h-[400px]">
+        {/* Friends sharing a meal — mid-left, behind */}
+        <TornPhoto
+          src={order1}
+          alt="Friends sharing pizza and snacks together"
+          className="absolute left-0 top-[18%] z-10 h-[58%] w-[48%] -rotate-[6deg]"
+          sizes="280px"
+        />
 
-      {/* Woman eating by graffiti wall — largest, bottom right */}
-      <TornPhoto
-        src={order2}
-        alt="A woman enjoying a wrap in front of a graffiti wall"
-        className="absolute bottom-0 right-0 z-30 h-[62%] w-[54%] rotate-[8deg] sm:w-[50%]"
-        sizes="(max-width: 640px) 54vw, 300px"
-      />
-    </div>
+        {/* Pizza slice — smaller, top center/right */}
+        <TornPhoto
+          src={order3}
+          alt="Hands holding a loaded slice of pizza"
+          className="absolute left-[42%] top-0 z-20 h-[42%] w-[36%] rotate-[7deg]"
+          sizes="200px"
+        />
+
+        {/* Woman eating by graffiti wall — largest, bottom right */}
+        <TornPhoto
+          src={order2}
+          alt="A woman enjoying a wrap in front of a graffiti wall"
+          className="absolute bottom-0 right-0 z-30 h-[62%] w-[50%] rotate-[8deg]"
+          sizes="300px"
+        />
+      </div>
+    </>
   );
 }

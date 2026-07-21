@@ -72,7 +72,7 @@ export function Benefits() {
             Different
           </h2>
 
-          <ul className="mt-12 grid grid-cols-1 gap-x-12 gap-y-12 sm:grid-cols-2 sm:mt-14 sm:gap-y-14">
+          <ul className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:mt-14 sm:gap-x-8 sm:gap-y-12 md:grid-cols-3 md:gap-x-10 md:gap-y-14 lg:grid-cols-2 lg:gap-x-12">
             {benefits.map((benefit) => (
               <BenefitItem key={benefit.title} {...benefit} />
             ))}
@@ -90,7 +90,7 @@ export function Benefits() {
             Crafted fresh and chosen by the chef.
           </p>
 
-          <div className="mt-10 grid grid-cols-2 gap-6 sm:gap-8">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
             {favorites.map((item) => (
               <FavoriteCard key={item.name} {...item} />
             ))}
@@ -136,10 +136,10 @@ function FavoriteCard({
 }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="relative h-36 w-36 sm:h-44 sm:w-44 md:h-48 md:w-48">
-        {/* Rounded-square backdrop centered behind the photo, corners peeking out on all sides */}
+      <div className="relative h-64 w-64 sm:h-44 sm:w-44 md:h-48 md:w-48">
+        {/* Rounded-square backdrop shifted upward — only top-left/top-right corners peek out */}
         <div
-          className="absolute -inset-2 rounded-[26px] bg-yellow shadow-[0_10px_28px_rgba(0,0,0,0.4)] sm:-inset-2.5 sm:rounded-[30px] md:-inset-3 md:rounded-[32px]"
+          className="absolute -left-2 -right-2 -top-3 bottom-1 rounded-[26px] bg-yellow shadow-[0_10px_28px_rgba(0,0,0,0.4)] sm:-left-2.5 sm:-right-2.5 sm:-top-3.5 sm:bottom-1 sm:rounded-[30px] md:-left-3 md:-right-3 md:-top-4 md:bottom-1 md:rounded-[32px]"
           aria-hidden
         />
         <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-[6px] border-cream shadow-[0_14px_36px_rgba(0,0,0,0.45)] sm:border-[7px]">

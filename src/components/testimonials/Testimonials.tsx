@@ -56,18 +56,18 @@ export function Testimonials() {
 
             <div className="mx-auto max-w-[1440px] px-4 pb-20 pt-14 sm:px-8 sm:pb-24 md:px-10 md:pt-20">
                 <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-                    <h2 className="font-heading text-5xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-dark-yellow sm:text-6xl lg:text-7xl">
+                    <h2 className="order-2 font-heading text-5xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-dark-yellow sm:order-1 sm:text-6xl lg:text-7xl">
                         Loved By
                         <br />
                         Customers
                     </h2>
-                    <p className="flex items-center gap-2 font-body text-sm font-bold text-dark-yellow sm:text-base">
+                    <p className="order-1 flex items-center gap-2 font-body text-sm font-bold text-dark-yellow sm:order-2 sm:text-base">
                         <ThumbsUp size={20} className="fill-yellow text-yellow" aria-hidden />
                         98% Satisfaction
                     </p>
                 </div>
 
-                <div className="mt-12 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,400px)_1fr] lg:gap-8">
+                <div className="mt-12 grid grid-cols-1 items-start gap-6 md:grid-cols-[minmax(0,400px)_1fr] md:gap-8">
                     <VideoCard />
 
                     <div className="columns-1 gap-6 pt-2 sm:columns-2 sm:gap-6">
@@ -83,7 +83,7 @@ export function Testimonials() {
 
 function VideoCard() {
     return (
-        <div className="relative mx-auto aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-[28px] border-4 border-dark-yellow shadow-xl lg:max-w-none">
+        <div className="relative mx-auto aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-[28px] border-4 border-dark-yellow shadow-xl md:max-w-none">
             <video
                 className="absolute inset-0 h-full w-full object-cover"
                 autoPlay

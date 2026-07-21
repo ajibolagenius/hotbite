@@ -63,7 +63,7 @@ function FoodCard({
   return (
     <div className="flex flex-col items-center">
       <div className="relative flex h-40 w-40 items-center justify-center sm:h-48 sm:w-48 md:h-56 md:w-56">
-        <div className="absolute inset-[7%] rounded-[6%] bg-yellow" />
+        <div className="absolute -inset-x-2 inset-y-[20%] rounded-[6%] bg-yellow" />
         <div className="relative h-full w-full overflow-hidden rounded-full border-[6px] border-dark-yellow sm:border-8">
           <Image
             src={image}
