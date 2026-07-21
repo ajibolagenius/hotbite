@@ -63,7 +63,7 @@ function FoodCard({
   return (
     <div className="flex flex-col items-center">
       <div className="relative flex h-40 w-40 items-center justify-center sm:h-48 sm:w-48 md:h-56 md:w-56">
-        <div className="absolute inset-[6%] rounded-[22%] bg-yellow" />
+        <div className="absolute inset-[7%] rounded-[6%] bg-yellow" />
         <div className="relative h-full w-full overflow-hidden rounded-full border-[6px] border-dark-yellow sm:border-8">
           <Image
             src={image}
@@ -77,7 +77,7 @@ function FoodCard({
       <h3 className="mt-6 font-heading text-2xl uppercase tracking-wide text-dark-yellow sm:text-3xl">
         {name}
       </h3>
-      <span className="mt-3 rounded-full border-2 border-dark-yellow px-4 py-1 font-body text-sm font-bold text-dark-yellow">
+      <span className="mt-3 rounded-full border-2 border-dark-yellow bg-dark-yellow/10 px-4 py-1 font-body text-sm font-bold text-dark-yellow">
         {price}
       </span>
     </div>

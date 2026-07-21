@@ -195,11 +195,11 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Hang the torn edge over the cream page below so valleys reveal cream */}
+      {/* Extend the hero color below the section so it tears into the cream page */}
       <div
-        className={`pointer-events-none absolute bottom-0 left-0 right-0 z-20 translate-y-[55%] transition-colors duration-700 ${slide.edgeTextClass}`}
+        className={`pointer-events-none absolute bottom-0 left-0 right-0 z-20 translate-y-[calc(100%-1px)] transition-colors duration-700 ${slide.edgeTextClass}`}
       >
-        <SectionEdge side="bottom" />
+        <SectionEdge side="top" />
       </div>
     </section>
   );

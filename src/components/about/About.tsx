@@ -7,25 +7,25 @@ import collagePicnic from "@/assets/about/collage-picnic.png";
 export function About() {
   return (
     <section id="about" className="relative bg-cream">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-16 px-4 py-20 sm:px-8 md:px-10 md:py-28 lg:grid-cols-2 lg:gap-12 lg:py-32">
-        <div className="relative h-[380px] sm:h-[440px] md:h-[500px] lg:h-[560px]">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-16 px-4 py-20 sm:px-8 md:px-10 md:py-28 lg:grid-cols-[1.8fr_1fr] lg:gap-14 lg:py-32">
+        <div className="relative h-[400px] sm:h-[480px] md:h-[560px] lg:h-[660px]">
           <TornPhoto
             src={collageFood}
             alt="Loaded fries, salsa, chips and a burger on a checkered tray"
-            className="absolute left-0 top-[12%] h-[68%] w-[62%] -rotate-2"
-            sizes="(max-width: 1024px) 60vw, 420px"
+            className="absolute left-0 top-0 h-[74%] w-[75%] -rotate-2"
+            sizes="(max-width: 1024px) 72vw, 640px"
           />
           <TornPhoto
             src={collagePortrait}
             alt="A woman happily eating a loaded sandwich"
-            className="absolute right-[4%] top-0 h-[52%] w-[36%] rotate-3"
-            sizes="(max-width: 1024px) 34vw, 260px"
+            className="absolute right-[2%] top-[34%] h-[39%] w-[34%] rotate-2"
+            sizes="(max-width: 1024px) 33vw, 300px"
           />
           <TornPhoto
             src={collagePicnic}
             alt="Friends sharing takeout fries and wraps on a picnic blanket"
-            className="absolute left-[20%] top-[54%] h-[46%] w-[58%] -rotate-3"
-            sizes="(max-width: 1024px) 56vw, 400px"
+            className="absolute left-[30%] top-[53%] h-[42%] w-[56%] rotate-2"
+            sizes="(max-width: 1024px) 54vw, 480px"
           />
         </div>
 

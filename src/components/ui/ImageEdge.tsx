@@ -29,7 +29,7 @@ export function ImageEdge({ side, className = "" }: ImageEdgeProps) {
       preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
-      className={`pointer-events-none absolute z-10 block text-cream ${POSITION_CLASSES[side]} ${className}`}
+      className={`pointer-events-none absolute z-10 block text-white ${POSITION_CLASSES[side]} ${className}`}
     >
       {isVertical ? (
         <g transform={`translate(32 512) rotate(${side === "left" ? 90 : -90}) translate(-512 -32)`}>

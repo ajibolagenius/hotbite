@@ -9,10 +9,10 @@ interface TornPhotoProps {
   priority?: boolean;
 }
 
-/** Photo with a ragged torn-paper frame on all four sides. Position/size/rotate via `className`. */
+/** Photo with a ragged torn-paper frame on all four sides. Position/size/rotate via `className` — pass a position class (`absolute`/`relative`) so the inner edges anchor correctly. */
 export function TornPhoto({ src, alt, className = "", sizes, priority }: TornPhotoProps) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={className}>
       <div className="absolute inset-0 overflow-hidden rounded-sm shadow-xl">
         <Image
           src={src}
