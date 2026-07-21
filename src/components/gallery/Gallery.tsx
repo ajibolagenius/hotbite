@@ -143,7 +143,7 @@ export function Gallery() {
       </div>
 
       {/* Generous cream gap before the torn edge into Benefits */}
-      <div className="mt-24 text-dark-yellow sm:mt-32 md:mt-36">
+      <div className="mt-28 text-dark-yellow sm:mt-36 md:mt-40">
         <SectionEdge side="bottom" />
       </div>
     </section>

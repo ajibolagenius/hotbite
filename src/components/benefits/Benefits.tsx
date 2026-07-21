@@ -62,7 +62,7 @@ export function Benefits() {
   return (
     <section
       id="benefits"
-      className="scroll-mt-24 bg-dark-yellow px-4 py-20 sm:px-8 sm:py-24 md:px-10 md:py-28 lg:scroll-mt-28"
+      className="scroll-mt-24 bg-dark-yellow px-4 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-28 md:px-10 md:pb-28 md:pt-36 lg:scroll-mt-28 lg:pt-44 xl:pt-56"
     >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-12 xl:gap-20">
         <div>
@@ -137,12 +137,12 @@ function FavoriteCard({
   return (
     <div className="flex flex-col items-center text-center">
       <div className="relative h-36 w-36 sm:h-44 sm:w-44 md:h-48 md:w-48">
-        {/* Orange circle offset bottom-right behind the photo */}
+        {/* Rounded-square backdrop centered behind the photo, corners peeking out on all sides */}
         <div
-          className="absolute -bottom-1 -right-1 h-[92%] w-[92%] rounded-full bg-yellow shadow-[0_8px_24px_rgba(255,149,0,0.35)]"
+          className="absolute -inset-2 rounded-[26px] bg-yellow shadow-[0_10px_28px_rgba(0,0,0,0.4)] sm:-inset-2.5 sm:rounded-[30px] md:-inset-3 md:rounded-[32px]"
           aria-hidden
         />
-        <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-[3px] border-cream shadow-[0_14px_36px_rgba(0,0,0,0.45)] sm:border-4">
+        <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-[6px] border-cream shadow-[0_14px_36px_rgba(0,0,0,0.45)] sm:border-[7px]">
           <Image
             src={image}
             alt={alt}
