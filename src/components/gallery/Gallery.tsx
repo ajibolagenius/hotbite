@@ -108,7 +108,7 @@ export function Gallery() {
       </div>
 
       {/* Static overlapping cluster — no horizontal scroll / marquee */}
-      <div className="relative mx-auto mt-10 flex max-w-[1440px] items-center justify-center px-2 py-16 sm:mt-14 sm:py-20 md:px-6">
+      <div className="relative mx-auto mt-10 flex max-w-[1440px] items-center justify-center px-2 pb-8 pt-16 sm:mt-14 sm:pb-10 sm:pt-20 md:px-6">
         {/* Far-left photo (desktop only) */}
         <div className="pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 xl:block">
           <PhotoFrame photo={sidePhotos[0]} className="-ml-6" />
@@ -142,7 +142,8 @@ export function Gallery() {
         </div>
       </div>
 
-      <div className="mt-4 text-dark-yellow sm:mt-8">
+      {/* Generous cream gap before the torn edge into Benefits */}
+      <div className="mt-24 text-dark-yellow sm:mt-32 md:mt-36">
         <SectionEdge side="bottom" />
       </div>
     </section>

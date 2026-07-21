@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ButtonLink } from "@/components/ui/Button";
+import { TornPhoto } from "@/components/ui/TornPhoto";
 import { Emoji, type EmojiName } from "@/components/emoji";
 import order1 from "@/assets/order/order-1.png";
 import order2 from "@/assets/order/order-2.png";
@@ -11,21 +11,24 @@ const floatingIcons: {
   emojiClassName: string;
 }[] = [
   {
+    // Nestled near the 'E' in ORDER
     name: "takeout-box",
     className:
-      "left-[78%] top-[8%] h-11 w-11 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+      "left-[78%] top-[10%] h-11 w-11 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
     emojiClassName: "h-6 w-6 sm:h-8 sm:w-8 lg:h-9 lg:w-9",
   },
   {
+    // Overlaps BOLD — face nestled in the letter counter
     name: "face-savoring-food",
     className:
-      "left-[12%] top-[38%] h-12 w-12 sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px]",
+      "left-[18%] top-[38%] h-12 w-12 sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px]",
     emojiClassName: "h-7 w-7 sm:h-9 sm:w-9 lg:h-10 lg:w-10",
   },
   {
+    // Purple heart above STREET
     name: "purple-heart",
     className:
-      "left-[72%] top-[58%] h-11 w-11 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+      "left-[42%] top-[52%] h-11 w-11 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
     emojiClassName: "h-6 w-6 sm:h-8 sm:w-8 lg:h-9 lg:w-9",
   },
 ];
@@ -93,39 +96,30 @@ export function Order() {
 
 function OrderCollage() {
   return (
-    <div className="relative mt-12 h-[280px] w-full max-w-lg sm:mt-14 sm:h-[340px] lg:h-[380px]">
-      {/* Friends sharing a meal — largest, tipped left */}
-      <div className="absolute left-0 top-[8%] z-10 h-[70%] w-[58%] -rotate-[6deg] sm:w-[55%]">
-        <Image
-          src={order1}
-          alt="Friends sharing pizza and snacks together"
-          fill
-          className="object-contain drop-shadow-xl"
-          sizes="(max-width: 640px) 55vw, 320px"
-        />
-      </div>
+    <div className="relative mt-12 h-[300px] w-full max-w-lg sm:mt-14 sm:h-[360px] lg:h-[400px]">
+      {/* Friends sharing a meal — mid-left, behind */}
+      <TornPhoto
+        src={order1}
+        alt="Friends sharing pizza and snacks together"
+        className="absolute left-0 top-[18%] z-10 h-[58%] w-[52%] -rotate-[6deg] sm:w-[48%]"
+        sizes="(max-width: 640px) 52vw, 280px"
+      />
 
-      {/* Pizza slice close-up — top right */}
-      <div className="absolute right-[2%] top-0 z-20 h-[48%] w-[42%] rotate-[8deg] sm:right-[4%] sm:w-[40%]">
-        <Image
-          src={order3}
-          alt="Hands holding a loaded slice of pizza"
-          fill
-          className="object-contain drop-shadow-xl"
-          sizes="(max-width: 640px) 40vw, 200px"
-        />
-      </div>
+      {/* Pizza slice — smaller, top center/right */}
+      <TornPhoto
+        src={order3}
+        alt="Hands holding a loaded slice of pizza"
+        className="absolute left-[38%] top-0 z-20 h-[42%] w-[38%] rotate-[7deg] sm:left-[42%] sm:w-[36%]"
+        sizes="(max-width: 640px) 38vw, 200px"
+      />
 
-      {/* Woman eating by graffiti wall — bottom right */}
-      <div className="absolute bottom-0 right-[6%] z-30 h-[58%] w-[50%] rotate-[4deg] sm:right-[8%] sm:w-[48%]">
-        <Image
-          src={order2}
-          alt="A woman enjoying a wrap in front of a graffiti wall"
-          fill
-          className="object-contain drop-shadow-xl"
-          sizes="(max-width: 640px) 48vw, 280px"
-        />
-      </div>
+      {/* Woman eating by graffiti wall — largest, bottom right */}
+      <TornPhoto
+        src={order2}
+        alt="A woman enjoying a wrap in front of a graffiti wall"
+        className="absolute bottom-0 right-0 z-30 h-[62%] w-[54%] rotate-[8deg] sm:w-[50%]"
+        sizes="(max-width: 640px) 54vw, 300px"
+      />
     </div>
   );
 }

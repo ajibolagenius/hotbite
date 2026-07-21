@@ -11,6 +11,7 @@ import { Gallery } from "@/components/gallery/Gallery";
 import { Benefits } from "@/components/benefits/Benefits";
 import { Order } from "@/components/order/Order";
 import { Contact } from "@/components/contact/Contact";
+import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <Order />
       <Contact />
       <PhraseTicker />
+      <Footer />
     </main>
   );
 }

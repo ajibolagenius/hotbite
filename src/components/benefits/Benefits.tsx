@@ -72,7 +72,7 @@ export function Benefits() {
             Different
           </h2>
 
-          <ul className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 sm:mt-14 sm:gap-y-12">
+          <ul className="mt-12 grid grid-cols-1 gap-x-12 gap-y-12 sm:grid-cols-2 sm:mt-14 sm:gap-y-14">
             {benefits.map((benefit) => (
               <BenefitItem key={benefit.title} {...benefit} />
             ))}
@@ -109,18 +109,16 @@ export function Benefits() {
 
 function BenefitItem({ emoji, title, description }: Benefit) {
   return (
-    <li className="flex gap-4">
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-yellow bg-dark-yellow shadow-[0_0_18px_rgba(255,149,0,0.45)] sm:h-14 sm:w-14">
+    <li className="flex flex-col items-start">
+      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-yellow bg-dark-yellow shadow-[0_0_20px_rgba(255,149,0,0.55),0_4px_14px_rgba(0,0,0,0.35)] sm:h-14 sm:w-14">
         <Emoji name={emoji} size={64} alt="" className="h-7 w-7 sm:h-8 sm:w-8" />
       </span>
-      <div>
-        <h3 className="font-heading text-xl font-black uppercase tracking-wide text-cream sm:text-2xl">
-          {title}
-        </h3>
-        <p className="mt-1.5 max-w-[240px] font-body text-sm leading-relaxed text-cream/85 sm:text-[15px]">
-          {description}
-        </p>
-      </div>
+      <h3 className="mt-4 font-heading text-xl font-black uppercase tracking-wide text-cream sm:text-2xl">
+        {title}
+      </h3>
+      <p className="mt-1.5 max-w-[240px] font-body text-sm leading-relaxed text-cream/85 sm:text-[15px]">
+        {description}
+      </p>
     </li>
   );
 }
@@ -138,12 +136,13 @@ function FavoriteCard({
 }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="relative flex h-36 w-36 items-center justify-center sm:h-44 sm:w-44 md:h-48 md:w-48">
+      <div className="relative h-36 w-36 sm:h-44 sm:w-44 md:h-48 md:w-48">
+        {/* Orange circle offset bottom-right behind the photo */}
         <div
-          className="absolute inset-[6%] rounded-[18%] bg-yellow shadow-[0_0_28px_rgba(255,149,0,0.55)]"
+          className="absolute -bottom-1 -right-1 h-[92%] w-[92%] rounded-full bg-yellow shadow-[0_8px_24px_rgba(255,149,0,0.35)]"
           aria-hidden
         />
-        <div className="relative h-full w-full overflow-hidden rounded-full border-[5px] border-dark-yellow sm:border-[6px]">
+        <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-[3px] border-cream shadow-[0_14px_36px_rgba(0,0,0,0.45)] sm:border-4">
           <Image
             src={image}
             alt={alt}
@@ -156,7 +155,7 @@ function FavoriteCard({
       <h4 className="mt-5 font-heading text-lg font-black uppercase tracking-wide text-cream sm:text-xl md:text-2xl">
         {name}
       </h4>
-      <span className="mt-2.5 rounded-full border-2 border-cream/50 px-3.5 py-0.5 font-body text-sm font-bold text-cream">
+      <span className="mt-2.5 rounded-full border border-cream/70 bg-dark-yellow px-3.5 py-0.5 font-body text-sm font-bold text-cream">
         {price}
       </span>
     </div>
