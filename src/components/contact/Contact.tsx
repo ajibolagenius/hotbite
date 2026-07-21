@@ -9,9 +9,8 @@ export function Contact() {
       id="contact"
       className="bg-cream px-4 pb-36 pt-20 sm:px-8 sm:pb-44 sm:pt-24 md:px-10 md:pb-48"
     >
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-14 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-16 xl:gap-24">
-        <div className="relative order-2 mx-auto aspect-square w-full max-w-[420px] md:order-1 md:mx-0 md:max-w-[480px]">
-          {/* Orange rounded square behind the circular photo — matches UI tilt */}
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16 xl:gap-24">
+        <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:mx-0 lg:max-w-[480px]">
           <div
             className="absolute inset-[8%] rotate-[14deg] rounded-[28px] bg-yellow sm:rounded-[36px]"
             aria-hidden
@@ -27,7 +26,7 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="order-1 md:order-2">
+        <div>
           <h2 className="font-heading text-5xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-dark-yellow sm:text-6xl lg:text-7xl xl:text-8xl">
             Let&apos;s
             <br />
@@ -40,7 +39,7 @@ export function Contact() {
               <ContactLine icon={Clock} text="Open Daily – 10AM to 11PM" />
             </ContactBlock>
 
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10">
               <ContactBlock title="Email Us">
                 <ContactLine
                   icon={Mail}

@@ -67,12 +67,16 @@ export function Testimonials() {
                     </p>
                 </div>
 
-                <div className="mt-12 grid grid-cols-1 items-start gap-6 md:grid-cols-[minmax(0,400px)_1fr] md:gap-8">
+                <div className="mt-12 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,400px)_1fr] lg:gap-8">
                     <VideoCard />
 
-                    <div className="columns-1 gap-6 pt-2 sm:columns-2 sm:gap-6">
-                        {[...leftReviews, ...rightReviews].map((review) => (
-                            <ReviewCard key={review.username} {...review} />
+                    <div className="columns-1 gap-6 pt-2 sm:columns-2 sm:gap-6 lg:pt-10">
+                        {[...leftReviews, ...rightReviews].map((review, index) => (
+                            <ReviewCard
+                                key={review.username}
+                                {...review}
+                                className={index === 0 ? "lg:mt-8" : undefined}
+                            />
                         ))}
                     </div>
                 </div>
@@ -83,7 +87,7 @@ export function Testimonials() {
 
 function VideoCard() {
     return (
-        <div className="relative mx-auto aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-[28px] border-4 border-dark-yellow shadow-xl md:max-w-none">
+        <div className="relative mx-auto aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-[28px] border-4 border-dark-yellow shadow-xl lg:max-w-none">
             <video
                 className="absolute inset-0 h-full w-full object-cover"
                 autoPlay
@@ -122,9 +126,17 @@ function VideoCard() {
     );
 }
 
-function ReviewCard({ username, verified, avatar, quote }: Review) {
+function ReviewCard({
+    username,
+    verified,
+    avatar,
+    quote,
+    className,
+}: Review & { className?: string }) {
     return (
-        <figure className="mb-6 break-inside-avoid flex flex-col rounded-[24px] bg-[#F5E4CE] p-6 sm:rounded-[28px] sm:p-7">
+        <figure
+            className={`mb-6 break-inside-avoid flex flex-col rounded-[24px] bg-[#F5E4CE] p-6 sm:rounded-[28px] sm:p-7 ${className ?? ""}`}
+        >
             <figcaption className="flex items-center gap-2">
                 <Image
                     src={avatar}

@@ -3,6 +3,7 @@
 import type { JSX, SVGProps } from "react";
 import { useLenis } from "lenis/react";
 import { Logo } from "@/components/logo";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { getHeaderScrollOffset } from "@/lib/scroll";
 
 const footerLinks = [
@@ -41,6 +42,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-dark-yellow pt-16 sm:pt-20">
+      <GrainOverlay />
       <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-center px-4 pb-14 text-center sm:px-8 md:px-10">
         <a href="#" onClick={handleBackToTop} aria-label="Back to top">
           <Logo className="h-7 w-auto sm:h-8" />
@@ -93,7 +95,7 @@ export function Footer() {
 
       <p
         aria-hidden
-        className="pointer-events-none translate-y-[35%] select-none whitespace-nowrap text-center font-heading text-[26vw] font-black uppercase leading-none tracking-tight text-cream/[0.04] sm:text-[22vw]"
+        className="pointer-events-none relative z-[1] translate-y-[35%] select-none whitespace-nowrap text-center font-heading text-[26vw] font-black uppercase leading-none tracking-tight text-cream/[0.05] sm:text-[22vw]"
       >
         Hotbite
       </p>

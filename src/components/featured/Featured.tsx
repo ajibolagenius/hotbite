@@ -27,7 +27,7 @@ const specials = [
 
 export function Featured() {
   return (
-    <section id="specials" className="relative overflow-x-clip bg-cream pb-28 pt-16 sm:pb-32 md:pt-20">
+    <section id="specials" className="relative overflow-x-clip bg-cream pb-24 pt-14 sm:pb-28 sm:pt-16 md:pb-32 md:pt-20">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8 md:px-10">
         <h2 className="text-center font-heading text-5xl font-black uppercase leading-[0.85] tracking-[-0.02em] text-dark-yellow sm:text-6xl lg:text-7xl">
           Hotbite
@@ -35,7 +35,7 @@ export function Featured() {
           Specials
         </h2>
 
-        <div className="mt-16 grid grid-cols-1 gap-14 sm:grid-cols-3 sm:gap-8 md:mt-20">
+        <div className="mt-14 grid grid-cols-1 gap-12 sm:mt-16 sm:grid-cols-3 sm:gap-8 md:mt-20">
           {specials.map((item) => (
             <FoodCard key={item.name} {...item} />
           ))}
@@ -77,7 +77,7 @@ function FoodCard({
       <h3 className="mt-6 font-heading text-2xl uppercase tracking-wide text-dark-yellow sm:text-3xl">
         {name}
       </h3>
-      <span className="mt-3 rounded-full border-2 border-dark-yellow bg-dark-yellow/10 px-4 py-1 font-body text-sm font-bold text-dark-yellow">
+      <span className="mt-3 rounded-full border border-dark-yellow bg-cream px-4 py-1 font-body text-sm font-bold text-dark-yellow">
         {price}
       </span>
     </div>

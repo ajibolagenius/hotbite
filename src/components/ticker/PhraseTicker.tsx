@@ -34,7 +34,7 @@ export function PhraseTicker() {
           >
             {sequence.map((phrase, index) => (
               <Fragment key={`${phrase.label}-${index}`}>
-                <span className="whitespace-nowrap font-body text-sm font-bold text-dark-yellow sm:text-base">
+                <span className="whitespace-nowrap font-body text-sm font-bold uppercase text-dark-yellow sm:text-base">
                   {phrase.label}
                 </span>
                 <Emoji

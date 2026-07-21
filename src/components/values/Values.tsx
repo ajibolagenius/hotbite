@@ -1,6 +1,7 @@
 import { AlarmClock, Flame, Heart, Star, type LucideIcon } from "lucide-react";
 import { TornPhoto } from "@/components/ui/TornPhoto";
 import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import valuePhoto from "@/assets/values/value-photo.png";
 
 interface Value {
@@ -35,10 +36,13 @@ const rightValues: Value[] = [
   },
 ];
 
+const allValues = [...leftValues, ...rightValues];
+
 export function Values() {
   return (
-    <section id="values" className="bg-dark-yellow px-4 py-20 sm:px-8 sm:py-24 md:px-10">
-      <div className="mx-auto flex max-w-[1440px] flex-col items-center">
+    <section id="values" className="relative bg-dark-yellow px-4 py-20 sm:px-8 sm:py-24 md:px-10">
+      <GrainOverlay />
+      <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-center">
         <h2 className="text-center font-heading text-5xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-cream sm:text-6xl lg:text-7xl">
           Taste The
           <br />
@@ -48,8 +52,25 @@ export function Values() {
           Street food done right.
         </p>
 
-        <div className="mt-14 grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_auto_1fr] lg:gap-10">
-          <div className="order-1 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-1 lg:gap-16">
+        {/* Mobile / tablet: features first, then photo */}
+        <div className="mt-14 flex w-full flex-col items-center gap-12 lg:hidden">
+          <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+            {allValues.map((value) => (
+              <ValueBlock key={value.title} {...value} />
+            ))}
+          </div>
+
+          <TornPhoto
+            src={valuePhoto}
+            alt="A woman enjoying a slice of pizza outside a street food truck"
+            className="relative mx-auto h-[420px] w-[315px] sm:h-[500px] sm:w-[375px]"
+            sizes="(max-width: 640px) 315px, 375px"
+          />
+        </div>
+
+        {/* Desktop: left values | photo | right values */}
+        <div className="mt-14 hidden w-full grid-cols-[1fr_auto_1fr] items-center gap-10 lg:grid">
+          <div className="grid grid-cols-1 gap-16">
             {leftValues.map((value) => (
               <ValueBlock key={value.title} {...value} />
             ))}
@@ -58,11 +79,11 @@ export function Values() {
           <TornPhoto
             src={valuePhoto}
             alt="A woman enjoying a slice of pizza outside a street food truck"
-            className="relative order-3 mx-auto h-[420px] w-[315px] sm:h-[500px] sm:w-[375px] md:h-[560px] md:w-[700px] lg:order-2 lg:h-[420px] lg:w-[315px]"
-            sizes="(max-width: 640px) 315px, (max-width: 1024px) 700px, 375px"
+            className="relative mx-auto h-[500px] w-[375px]"
+            sizes="375px"
           />
 
-          <div className="order-2 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:order-3 lg:grid-cols-1 lg:gap-16">
+          <div className="grid grid-cols-1 gap-16">
             {rightValues.map((value) => (
               <ValueBlock key={value.title} {...value} />
             ))}

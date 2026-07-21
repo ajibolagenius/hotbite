@@ -1,6 +1,7 @@
 import { Clock, Heart, Star } from "lucide-react";
 import { Emoji } from "@/components/emoji";
 import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import {
   leftColumn,
   promo,
@@ -11,8 +12,9 @@ import {
 
 export function Menu() {
   return (
-    <section id="menu" className="bg-dark-yellow px-4 pb-20 pt-10 sm:px-8 sm:pb-28 md:px-10">
-      <div className="mx-auto max-w-[1180px] overflow-hidden rounded-[28px] bg-cream sm:rounded-[36px]">
+    <section id="menu" className="relative bg-dark-yellow px-4 pb-20 pt-10 sm:px-8 sm:pb-28 md:px-10">
+      <GrainOverlay />
+      <div className="relative z-10 mx-auto max-w-[1180px] overflow-hidden rounded-[28px] bg-menu-cream sm:rounded-[36px]">
         <header className="flex flex-col gap-5 bg-white/50 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-10 lg:px-14">
           <h2 className="font-heading text-5xl font-black uppercase leading-none text-dark-yellow sm:text-6xl">
             Menu

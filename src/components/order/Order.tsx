@@ -11,25 +11,22 @@ const floatingIcons: {
   emojiClassName: string;
 }[] = [
   {
-    // Nestled between the 'D' and 'E' in ORDER
     name: "takeout-box",
     className:
-      "left-[26%] top-[16%] h-11 w-11 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
-    emojiClassName: "h-6 w-6 sm:h-8 sm:w-8 lg:h-9 lg:w-9",
+      "left-[28%] top-[14%] h-9 w-9 sm:left-[26%] sm:top-[16%] sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+    emojiClassName: "h-5 w-5 sm:h-8 sm:w-8 lg:h-9 lg:w-9",
   },
   {
-    // Overlaps BOLD — face nestled in the 'O' counter
     name: "face-savoring-food",
     className:
-      "left-[9%] top-[46%] h-12 w-12 sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px]",
-    emojiClassName: "h-7 w-7 sm:h-9 sm:w-9 lg:h-10 lg:w-10",
+      "left-[12%] top-[44%] h-10 w-10 sm:left-[9%] sm:top-[46%] sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px]",
+    emojiClassName: "h-6 w-6 sm:h-9 sm:w-9 lg:h-10 lg:w-10",
   },
   {
-    // Purple heart between BOLD and STREET
     name: "purple-heart",
     className:
-      "left-[18%] top-[50%] h-11 w-11 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
-    emojiClassName: "h-6 w-6 sm:h-8 sm:w-8 lg:h-9 lg:w-9",
+      "left-[22%] top-[48%] h-9 w-9 sm:left-[18%] sm:top-[50%] sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+    emojiClassName: "h-5 w-5 sm:h-8 sm:w-8 lg:h-9 lg:w-9",
   },
 ];
 

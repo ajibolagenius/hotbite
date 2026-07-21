@@ -3,6 +3,7 @@
 :root {
   --hotbite-white: #ffffff;
   --hotbite-cream: #ffefd9;
+  --hotbite-menu-cream: #f5e4ce;
   --hotbite-yellow: #ff9500;
   --hotbite-dark-yellow: #401500;
   --hotbite-green: #33cc66;
@@ -20,6 +21,7 @@
 
   --color-white: var(--hotbite-white);
   --color-cream: var(--hotbite-cream);
+  --color-menu-cream: var(--hotbite-menu-cream);
   --color-yellow: var(--hotbite-yellow);
   --color-dark-yellow: var(--hotbite-dark-yellow);
   --color-green: var(--hotbite-green);

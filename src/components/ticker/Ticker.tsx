@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Emoji, type EmojiName } from "@/components/emoji";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 
 interface TickerPhrase {
   label: string;
@@ -36,8 +37,9 @@ const rows: { phrases: TickerPhrase[]; duration: string; reverse?: boolean }[] =
 
 export function Ticker() {
   return (
-    <section aria-label="Hotbite highlights" className="overflow-hidden bg-dark-yellow py-14 sm:py-20">
-      <div className="flex flex-col gap-4 sm:gap-6">
+    <section aria-label="Hotbite highlights" className="relative overflow-hidden bg-dark-yellow py-14 sm:py-20">
+      <GrainOverlay />
+      <div className="relative z-10 flex flex-col gap-4 sm:gap-6">
         {rows.map((row) => (
           <TickerRow key={row.phrases[0].label} {...row} />
         ))}
@@ -76,7 +78,7 @@ function TickerRow({
           >
             {sequence.map((phrase, index) => (
               <Fragment key={`${phrase.label}-${index}`}>
-                <span className="whitespace-nowrap font-heading text-6xl font-black uppercase leading-none text-yellow sm:text-7xl lg:text-8xl">
+                <span className="whitespace-nowrap font-heading text-5xl font-black uppercase leading-none text-yellow sm:text-7xl lg:text-8xl">
                   {phrase.label}
                 </span>
                 <Emoji

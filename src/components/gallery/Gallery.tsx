@@ -32,40 +32,40 @@ const collage: PhotoCard[] = [
     image: gallery2,
     alt: "Friends sharing takeout boxes of street food and drinks",
     rotation: "-rotate-[7deg]",
-    offset: "-translate-y-6 sm:-translate-y-10",
-    size: "h-52 w-40 sm:h-72 sm:w-56 lg:h-[380px] lg:w-[280px]",
+    offset: "-translate-y-3 sm:-translate-y-6 md:-translate-y-10",
+    size: "h-40 w-28 sm:h-56 sm:w-44 md:h-72 md:w-56 lg:h-[380px] lg:w-[280px]",
     z: "z-10",
   },
   {
     image: gallery1,
     alt: "A stacked fried chicken burger with a runny egg",
     rotation: "rotate-[5deg]",
-    offset: "translate-y-8 sm:translate-y-14",
-    size: "h-56 w-44 sm:h-80 sm:w-60 lg:h-[420px] lg:w-[300px]",
+    offset: "translate-y-4 sm:translate-y-8 md:translate-y-14",
+    size: "h-44 w-32 sm:h-64 sm:w-48 md:h-80 md:w-60 lg:h-[420px] lg:w-[300px]",
     z: "z-20",
   },
   {
     image: gallery3,
     alt: "Hands grabbing pizza slices and fried chicken at a table",
     rotation: "-rotate-[4deg]",
-    offset: "-translate-y-4 sm:-translate-y-8",
-    size: "h-52 w-40 sm:h-72 sm:w-56 lg:h-[360px] lg:w-[260px]",
+    offset: "-translate-y-2 sm:-translate-y-4 md:-translate-y-8",
+    size: "h-40 w-28 sm:h-56 sm:w-44 md:h-72 md:w-56 lg:h-[360px] lg:w-[260px]",
     z: "z-30",
   },
   {
     image: gallery5,
     alt: "A loaded taco platter topped with fresh garnish",
     rotation: "rotate-[6deg]",
-    offset: "translate-y-10 sm:translate-y-16",
-    size: "h-56 w-44 sm:h-80 sm:w-60 lg:h-[400px] lg:w-[290px]",
+    offset: "translate-y-5 sm:translate-y-10 md:translate-y-16",
+    size: "h-44 w-32 sm:h-64 sm:w-48 md:h-80 md:w-60 lg:h-[400px] lg:w-[290px]",
     z: "z-20",
   },
   {
     image: gallery4,
     alt: "A table spread of street food baskets and cold drinks",
     rotation: "-rotate-[5deg]",
-    offset: "-translate-y-8 sm:-translate-y-12",
-    size: "h-52 w-40 sm:h-72 sm:w-56 lg:h-[380px] lg:w-[280px]",
+    offset: "-translate-y-4 sm:-translate-y-8 md:-translate-y-12",
+    size: "h-40 w-28 sm:h-56 sm:w-44 md:h-72 md:w-56 lg:h-[380px] lg:w-[280px]",
     z: "z-10",
   },
 ];
@@ -108,22 +108,23 @@ export function Gallery() {
       </div>
 
       {/* Static overlapping cluster — no horizontal scroll / marquee */}
-      <div className="relative mx-auto mt-10 flex max-w-[1440px] items-center justify-center px-2 pb-8 pt-16 sm:mt-14 sm:pb-10 sm:pt-20 md:px-6">
+      <div className="relative mx-auto mt-10 flex max-w-[1440px] items-center justify-center overflow-x-clip px-2 pb-8 pt-12 sm:mt-14 sm:overflow-visible sm:pb-10 sm:pt-20 md:px-6">
         {/* Far-left photo (desktop only) */}
         <div className="pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 xl:block">
           <PhotoFrame photo={sidePhotos[0]} className="-ml-6" />
         </div>
 
         <div className="flex items-center justify-center">
+          {/* On mobile show only 1 left photo to keep CTA readable */}
           {left.map((photo, index) => (
             <PhotoFrame
               key={photo.alt}
               photo={photo}
-              className={index === 0 ? "" : "-ml-10 sm:-ml-16 lg:-ml-20"}
+              className={`${index === 0 ? "" : "hidden sm:block"} ${index === 0 ? "" : "-ml-6 sm:-ml-12 md:-ml-16 lg:-ml-20"}`}
             />
           ))}
 
-          <div className="relative z-40 -mx-6 sm:-mx-10 lg:-mx-14">
+          <div className="relative z-40 -mx-4 sm:-mx-8 md:-mx-10 lg:-mx-14">
             <CtaCard />
           </div>
 
@@ -131,7 +132,7 @@ export function Gallery() {
             <PhotoFrame
               key={photo.alt}
               photo={photo}
-              className={index === 0 ? "-ml-10 sm:-ml-16 lg:-ml-20" : "-ml-10 sm:-ml-16 lg:-ml-20"}
+              className={`${index > 0 ? "hidden sm:block" : ""} -ml-6 sm:-ml-12 md:-ml-16 lg:-ml-20`}
             />
           ))}
         </div>

@@ -7,11 +7,14 @@ import { Header } from "@/components/header/Header";
 import { Emoji } from "@/components/emoji";
 import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
 import { SectionEdge } from "@/components/ui/SectionEdge";
-import grain from "@/assets/textures/grain.png";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { heroSlides } from "./hero-slides";
 
 const arrowButtonClass =
   "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cream text-dark-yellow transition hover:bg-white sm:h-14 sm:w-14 sm:rounded-2xl lg:h-16 lg:w-16";
+
+const heroHeadlineShadow =
+  "drop-shadow-[0_4px_0_rgba(64,21,0,0.45)] sm:drop-shadow-[0_6px_0_rgba(64,21,0,0.4)]";
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -26,15 +29,7 @@ export function Hero() {
       className={`relative flex min-h-screen flex-col overflow-x-clip transition-colors duration-700 ${slide.bgClass}`}
       style={{ minHeight: "100svh" }}
     >
-      <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-[0.35] mix-blend-overlay"
-        style={{
-          backgroundImage: `url(${grain.src})`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "256px 256px",
-        }}
-        aria-hidden
-      />
+      <GrainOverlay />
 
       <Header
         infoBarBgClass={slide.accentBgClass}
@@ -63,28 +58,28 @@ export function Hero() {
 
         <div className="flex flex-1 flex-col items-center justify-center pb-8 pt-2 md:pb-6 md:pt-0">
           {/* Desktop / tablet stage: height locks image inside the type block */}
-          <div className="relative mx-auto hidden h-[410px] w-full max-w-[1280px] md:block lg:h-[500px] xl:h-[560px]">
+          <div className="relative mx-auto hidden h-[360px] w-full max-w-[1280px] md:block lg:h-[440px] xl:h-[470px]">
             <div className="absolute inset-x-0 top-0 z-0 flex h-full flex-col items-center justify-center text-center leading-[0.72]">
               <div className="origin-center scale-x-[0.86]">
                 <h1
-                  className={`font-heading text-[172px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 lg:text-[236px] xl:text-[272px] ${slide.accentTextClass}`}
+                  className={`font-heading text-[140px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 md:text-[160px] lg:text-[236px] xl:text-[272px] ${heroHeadlineShadow} ${slide.accentTextClass}`}
                 >
                   Wrapped
                 </h1>
                 <h1
-                  className={`font-heading text-[172px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 lg:text-[236px] xl:text-[272px] ${slide.accentTextClass}`}
+                  className={`font-heading text-[140px] font-black uppercase tracking-[-0.04em] transition-colors duration-700 md:text-[160px] lg:text-[236px] xl:text-[272px] ${heroHeadlineShadow} ${slide.accentTextClass}`}
                 >
                   In Flavor
                 </h1>
               </div>
             </div>
 
-            <div className="pointer-events-none absolute left-1/2 top-[50%] z-10 w-[320px] -translate-x-1/2 -translate-y-1/2 lg:w-[560px] xl:w-[680px]">
+            <div className="pointer-events-none absolute left-1/2 top-[50%] z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 lg:w-[430px] xl:w-[510px]">
               <Image
                 src={slide.image}
                 alt={slide.imageAlt}
                 className="h-auto w-full drop-shadow-2xl"
-                sizes="(max-width: 1024px) 34vw, 680px"
+                sizes="(max-width: 1024px) 34vw, 470px"
                 priority={activeIndex === 0}
               />
             </div>
@@ -139,12 +134,12 @@ export function Hero() {
             <div className="relative mt-1 w-full text-center leading-[0.72]">
               <div className="origin-center scale-x-[0.73]">
                 <h1
-                  className={`font-heading text-[clamp(4.5rem,25vw,6rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${slide.accentTextClass}`}
+                  className={`font-heading text-[clamp(4.5rem,25vw,6rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${heroHeadlineShadow} ${slide.accentTextClass}`}
                 >
                   Wrapped
                 </h1>
                 <h1
-                  className={`font-heading text-[clamp(4.5rem,25vw,6rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${slide.accentTextClass}`}
+                  className={`font-heading text-[clamp(4.5rem,25vw,6rem)] font-black uppercase tracking-[-0.04em] transition-colors duration-700 ${heroHeadlineShadow} ${slide.accentTextClass}`}
                 >
                   In Flavor
                 </h1>
@@ -219,7 +214,7 @@ function FlavorTag({
 }) {
   return (
     <span
-      className={`absolute z-20 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border-2 px-3.5 py-1 font-body text-sm font-bold shadow-[0_0_18px_currentColor] transition-colors duration-700 sm:px-4 sm:py-1.5 sm:text-base ${bgClass} ${textClass} ${className ?? ""}`}
+      className={`absolute z-20 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border-2 px-3.5 py-1 font-body text-sm font-bold shadow-[0_0_14px_currentColor] transition-colors duration-700 sm:px-4 sm:py-1.5 sm:text-base ${bgClass} ${textClass} ${className ?? ""}`}
       style={{ borderColor: "currentColor" }}
     >
       {label}

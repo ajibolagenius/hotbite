@@ -1,4 +1,5 @@
 import { Emoji, type EmojiName } from "@/components/emoji";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 
 const bubbles: {
   name: EmojiName;
@@ -29,8 +30,9 @@ const bubbles: {
 
 export function Slogan() {
   return (
-    <section className="bg-dark-yellow px-4 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-36 md:px-10">
-      <div className="mx-auto flex max-w-[1440px] flex-col items-center text-center">
+    <section className="relative bg-dark-yellow px-4 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-36 md:px-10">
+      <GrainOverlay />
+      <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-center text-center">
         <div className="relative inline-block">
           <h2 className="font-heading text-5xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-yellow sm:text-7xl lg:text-8xl xl:text-[110px]">
             Flavor That

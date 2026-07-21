@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { Emoji, type EmojiName } from "@/components/emoji";
 import classicHotDog from "@/assets/benefits/classic-hot-dog.png";
 import smashBurger from "@/assets/benefits/smash-burger.png";
@@ -62,9 +63,10 @@ export function Benefits() {
   return (
     <section
       id="benefits"
-      className="scroll-mt-24 bg-dark-yellow px-4 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-28 md:px-10 md:pb-28 md:pt-36 lg:scroll-mt-28 lg:pt-44 xl:pt-56"
+      className="relative scroll-mt-24 bg-dark-yellow px-4 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-28 md:px-10 md:pb-28 md:pt-36 lg:scroll-mt-28 lg:pt-44 xl:pt-56"
     >
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-12 xl:gap-20">
+      <GrainOverlay />
+      <div className="relative z-10 mx-auto grid max-w-[1440px] grid-cols-1 gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-12 xl:gap-20">
         <div>
           <h2 className="font-heading text-5xl font-black uppercase leading-[0.9] tracking-[-0.02em] text-cream sm:text-6xl lg:text-7xl xl:text-[80px]">
             Why We Hit
@@ -79,8 +81,9 @@ export function Benefits() {
           </ul>
         </div>
 
-        <div className="flex flex-col">
-          <div className="flex items-center gap-2">
+        {/* Centered on mobile/tablet; right-aligned column on desktop */}
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="flex items-center justify-center gap-2 lg:justify-start">
             <Emoji name="red-heart" size={40} alt="" className="h-5 w-5 sm:h-6 sm:w-6" />
             <h3 className="font-heading text-2xl font-black uppercase tracking-wide text-cream sm:text-3xl">
               Chef&apos;s Favorite
@@ -90,13 +93,13 @@ export function Benefits() {
             Crafted fresh and chosen by the chef.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+          <div className="mt-10 grid w-full max-w-md grid-cols-2 gap-6 sm:max-w-none sm:gap-8 lg:max-w-none">
             {favorites.map((item) => (
               <FavoriteCard key={item.name} {...item} />
             ))}
           </div>
 
-          <div className="mt-10 flex justify-end sm:mt-12">
+          <div className="mt-10 flex justify-center sm:mt-12 lg:w-full lg:justify-end">
             <SmoothScrollLink href="#menu" variant="accent" className="px-7 py-3.5">
               View Menu
             </SmoothScrollLink>
@@ -136,10 +139,9 @@ function FavoriteCard({
 }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="relative h-64 w-64 sm:h-44 sm:w-44 md:h-48 md:w-48">
-        {/* Rounded-square backdrop shifted upward — only top-left/top-right corners peek out */}
+      <div className="relative h-36 w-36 sm:h-44 sm:w-44 md:h-48 md:w-48">
         <div
-          className="absolute -left-2 -right-2 -top-3 bottom-1 rounded-[26px] bg-yellow shadow-[0_10px_28px_rgba(0,0,0,0.4)] sm:-left-2.5 sm:-right-2.5 sm:-top-3.5 sm:bottom-1 sm:rounded-[30px] md:-left-3 md:-right-3 md:-top-4 md:bottom-1 md:rounded-[32px]"
+          className="absolute -inset-2 rounded-[26px] bg-yellow shadow-[0_10px_28px_rgba(0,0,0,0.4)] sm:-inset-2.5 sm:rounded-[30px] md:-inset-3 md:rounded-[32px]"
           aria-hidden
         />
         <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-[6px] border-cream shadow-[0_14px_36px_rgba(0,0,0,0.45)] sm:border-[7px]">
