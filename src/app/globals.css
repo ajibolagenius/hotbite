@@ -57,3 +57,13 @@ h6 {
 .animate-marquee {
   animation: marquee 18s linear infinite;
 }
+
+.animate-marquee-ticker {
+  animation: marquee 36s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-ticker {
+    animation-play-state: paused;
+  }
+}
