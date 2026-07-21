@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hotbite
+
+**Wrapped in flavor — bold street food, delivered hot.**
+
+Hotbite is the marketing site for a street-food brand, built with Next.js (App Router), React 19, and Tailwind CSS 4.
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org) — App Router
+- [React 19](https://react.dev)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Lenis](https://github.com/darkroomengineering/lenis) — smooth scrolling
+- [Lucide](https://lucide.dev) — icons
+- TypeScript
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command      | Description                        |
+| ------------ | ----------------------------------- |
+| `pnpm dev`   | Start the development server        |
+| `pnpm build` | Build the app for production        |
+| `pnpm start` | Start the production server         |
+| `pnpm lint`  | Run ESLint                          |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                  # Routes (App Router)
+│   ├── page.tsx          # Home page
+│   ├── layout.tsx        # Root layout, fonts, metadata
+│   ├── not-found.tsx     # 404 page
+│   ├── licenses/         # Licenses page
+│   └── privacy-policy/   # Privacy policy page
+├── components/           # Page sections and UI building blocks
+│   ├── hero/ about/ featured/ slogan/ menu/ ticker/
+│   ├── values/ testimonials/ gallery/ benefits/
+│   ├── order/ contact/ footer/ header/
+│   ├── licenses/ privacy/ not-found/
+│   ├── emoji/ logo/ providers/ ui/
+├── assets/               # Images used across sections
+└── lib/                  # Shared utilities (e.g. scroll helpers)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The home page (`src/app/page.tsx`) composes the full landing experience from section components: `Hero`, `About`, `Featured`, `Slogan`, `Menu`, `Ticker`, `Values`, `Testimonials`, `Gallery`, `Benefits`, `PhraseTicker`, `Order`, `Contact`, and `Footer`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Fonts
 
-## Deploy on Vercel
+Uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to load and self-host:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Londrina Solid** — display font
+- **Andika** — body font
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Environment Variables
+
+| Variable                | Description                                      | Default                  |
+| ------------------------ | ------------------------------------------------ | ------------------------- |
+| `NEXT_PUBLIC_SITE_URL`   | Base URL used for metadata and Open Graph images | `http://localhost:3000`  |
+
+## Deployment
+
+The easiest way to deploy is with [Vercel](https://vercel.com/new), the platform from the creators of Next.js. See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for details.
