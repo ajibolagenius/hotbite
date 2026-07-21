@@ -4,6 +4,9 @@ import { Featured } from "@/components/featured/Featured";
 import { Slogan } from "@/components/slogan/Slogan";
 import { Menu } from "@/components/menu/Menu";
 import { Ticker } from "@/components/ticker/Ticker";
+import { Values } from "@/components/values/Values";
+import { Testimonials } from "@/components/testimonials/Testimonials";
+import { Gallery } from "@/components/gallery/Gallery";
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
       <Slogan />
       <Menu />
       <Ticker />
+      <Values />
+      <Testimonials />
+      <Gallery />
     </main>
   );
 }
