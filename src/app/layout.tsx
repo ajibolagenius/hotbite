@@ -15,15 +15,34 @@ const andika = Andika({
   weight: ["400", "700"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const description = "Wrapped in flavor — bold street food, delivered hot.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Hotbite",
-  description: "Wrapped in flavor — bold street food, delivered hot.",
+  description,
   icons: {
     icon: [
       { url: "/favicon-light.svg", media: "(prefers-color-scheme: light)" },
       { url: "/favicon-dark.svg", media: "(prefers-color-scheme: dark)" },
     ],
     apple: "/webclip.svg",
+  },
+  openGraph: {
+    title: "Hotbite",
+    description,
+    url: "/",
+    siteName: "Hotbite",
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Hotbite — Wrapped in Flavor" }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hotbite",
+    description,
+    images: ["/og/home.png"],
   },
 };
 
