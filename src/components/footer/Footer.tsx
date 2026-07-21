@@ -1,6 +1,7 @@
 "use client";
 
 import type { JSX, SVGProps } from "react";
+import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
 import { Logo } from "@/components/logo";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
@@ -26,11 +27,16 @@ const socialLinks: {
 
 export function Footer() {
   const lenis = useLenis();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const resolveHref = (hash: string) => (isHome ? hash : `/${hash}`);
 
   const handleNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
+    if (!isHome) return;
     event.preventDefault();
     lenis?.scrollTo(href, { offset: -getHeaderScrollOffset() });
   };
@@ -52,7 +58,7 @@ export function Footer() {
           {footerLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               onClick={(event) => handleNavClick(event, link.href)}
               className="font-body text-sm font-bold text-cream transition hover:text-yellow sm:text-base"
             >
@@ -67,6 +73,12 @@ export function Footer() {
             className="font-body text-sm text-cream/50 transition hover:text-cream sm:text-base"
           >
             Privacy Policy
+          </a>
+          <a
+            href="/licenses"
+            className="font-body text-sm text-cream/50 transition hover:text-cream sm:text-base"
+          >
+            Licenses
           </a>
           <a
             href="#"
