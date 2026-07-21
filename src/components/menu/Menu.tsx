@@ -1,6 +1,6 @@
 import { Clock, Heart, Star } from "lucide-react";
 import { Emoji } from "@/components/emoji";
-import { Button } from "@/components/ui/Button";
+import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
 import {
   leftColumn,
   promo,
@@ -87,9 +87,9 @@ function PromoCard() {
       <h3 className="mt-4 max-w-xs font-heading text-3xl uppercase leading-[0.95] text-dark-yellow sm:text-4xl">
         {promo.title}
       </h3>
-      <Button variant="dark" className="mt-7">
+      <SmoothScrollLink href="#contact" variant="dark" className="mt-7">
         {promo.cta}
-      </Button>
+      </SmoothScrollLink>
     </div>
   );
 }

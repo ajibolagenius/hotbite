@@ -1,6 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import { SectionEdge } from "@/components/ui/SectionEdge";
-import { ButtonLink } from "@/components/ui/Button";
+import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
 import { Emoji } from "@/components/emoji";
 import gallery1 from "@/assets/gallery/gallery-1.png";
 import gallery2 from "@/assets/gallery/gallery-2.png";
@@ -185,9 +185,9 @@ function CtaCard() {
       <p className="font-body text-xs text-dark-yellow sm:text-sm lg:text-base">
         Bring your crew, order combos, and get free drinks included.
       </p>
-      <ButtonLink href="#location" variant="dark" className="px-6 py-2.5 sm:px-7 sm:py-3">
+      <SmoothScrollLink href="#contact" variant="dark" className="px-6 py-2.5 sm:px-7 sm:py-3">
         Find Us
-      </ButtonLink>
+      </SmoothScrollLink>
     </div>
   );
 }

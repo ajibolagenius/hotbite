@@ -1,6 +1,6 @@
 import { AlarmClock, Flame, Heart, Star, type LucideIcon } from "lucide-react";
 import { TornPhoto } from "@/components/ui/TornPhoto";
-import { ButtonLink } from "@/components/ui/Button";
+import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
 import valuePhoto from "@/assets/values/value-photo.png";
 
 interface Value {
@@ -69,9 +69,9 @@ export function Values() {
           </div>
         </div>
 
-        <ButtonLink href="#testimonials" variant="accent" className="mt-14 px-7 py-3.5">
+        <SmoothScrollLink href="#testimonials" variant="accent" className="mt-14 px-7 py-3.5">
           View Reviews
-        </ButtonLink>
+        </SmoothScrollLink>
       </div>
     </section>
   );

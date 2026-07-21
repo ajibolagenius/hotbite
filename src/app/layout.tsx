@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Londrina_Solid, Andika } from "next/font/google";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import "./globals.css";
 
 const londrinaSolid = Londrina_Solid({
@@ -36,7 +37,9 @@ export default function RootLayout({
       lang="en"
       className={`${londrinaSolid.variable} ${andika.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-body">{children}</body>
+      <body className="min-h-full flex flex-col font-body">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

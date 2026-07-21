@@ -1,5 +1,5 @@
 import { TornPhoto } from "@/components/ui/TornPhoto";
-import { Button } from "@/components/ui/Button";
+import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
 import collageFood from "@/assets/about/collage-food.png";
 import collagePortrait from "@/assets/about/collage-portrait.png";
 import collagePicnic from "@/assets/about/collage-picnic.png";
@@ -43,9 +43,9 @@ export function About() {
               fresh ingredients, handmade recipes, and unforgettable flavor.
             </p>
           </div>
-          <Button variant="accent" className="mt-8 px-7 py-3.5">
+          <SmoothScrollLink href="#values" variant="accent" className="mt-8 px-7 py-3.5">
             Explore The Difference
-          </Button>
+          </SmoothScrollLink>
         </div>
       </div>
     </section>

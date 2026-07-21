@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Header } from "@/components/header/Header";
 import { Emoji } from "@/components/emoji";
-import { Button } from "@/components/ui/Button";
+import { SmoothScrollLink } from "@/components/ui/SmoothScrollLink";
 import { SectionEdge } from "@/components/ui/SectionEdge";
 import grain from "@/assets/textures/grain.png";
 import { heroSlides } from "./hero-slides";
@@ -171,17 +171,18 @@ export function Hero() {
           </p>
 
           <div className="mt-5 flex items-center gap-3 md:mt-6">
-            <Button
+            <SmoothScrollLink
+              href="#menu"
               variant="accent"
               accentBgClass={slide.accentBgClass}
               accentTextClass={slide.accentDarkTextClass}
               className="px-7 py-3.5"
             >
               View Menu
-            </Button>
-            <Button variant="cream" className="px-7 py-3.5">
+            </SmoothScrollLink>
+            <SmoothScrollLink href="#contact" variant="cream" className="px-7 py-3.5">
               Find Us
-            </Button>
+            </SmoothScrollLink>
           </div>
 
           <div className="mt-8 flex items-center gap-4 md:hidden">
